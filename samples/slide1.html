@@ -1,0 +1,107 @@
+<!--Copyright (C) 2016  Srikanth Modegunta
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License along
+with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Slide show</title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link href="../lib/css/option_btn.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="../lib/option_btn.js"></script>
+        <script type="text/javascript" src="../lib/pagination.js"></script>
+        <style>
+            .slideshow{
+                border: 1px solid grey;
+            }
+            
+            .slideshow div{
+                width: 100%;
+                height: 300px;
+            }
+            
+            .slideshow img{
+                width: 100%;
+                height: inherit;
+            }
+            
+            #left img{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                top: -165px;
+                float: left;
+            }
+            
+            #right img{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                top: -165px;
+                float: right;
+            }
+            
+        </style>
+        <script type="text/javascript">
+            $(function(){
+                var slides = $(".slideshow").pagination({
+                    width: '100%',
+                    height: '300px',
+                    columnCount: 1,
+                    rowCount: 1, 
+                    forward_click_binding: "#right", //add go method also
+                    backward_click_binding: "#left",
+                    itemOnClick: function(index, itemnodes){
+
+                    },
+                    animation_style: 'slide',
+                    page_transition_delay: 1000,
+                    circular: true,
+                    delay_wait: 3000
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="slideshow">
+            <div>
+                <img src="images/slide_wide/1.jpg"/>
+            </div>
+            <div>
+                <img src="images/slide_wide/2.jpg"/>
+            </div>
+            <div>
+                <img src="images/slide_wide/3.jpg"/>
+            </div>
+            <div>
+                <img src="images/slide_wide/4.jpg"/>
+            </div>
+            <div>
+                <img src="images/slide_wide/5.jpg"/>
+            </div>
+        </div>
+        
+        <div id="left">
+            <img src="images/slide_wide/left.png"/>
+        </div>
+        
+        <div id="right">
+            <img src="images/slide_wide/right.png"/>
+        </div>
+    </body>
+</html>
+    
