@@ -1,5 +1,8 @@
 # slideshow_pagination
-This is web ui component that lets you to use it as either slideshow or pagination comp
+This web ui component allows you to create slideshow or pagination without much effort.
+Currently, it supports two animation styles when it comes to the page transition.
+* default (fadein and fadeout)
+* slide
 
 ##Pagination
 
