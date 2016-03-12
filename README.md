@@ -4,6 +4,9 @@ Currently, it supports two animation styles when it comes to the page transition
 * default (fadein and fadeout)
 * slide
 
+##NOTE:	
+This need to be used with fixed height and width, and using % may turn the functionality weird with slide option. 
+	Also it is not responsive. These things will be fixed in the next subsequent releases!
 ##Pagination
 
 to use the pagination component, keep your html and css ready
