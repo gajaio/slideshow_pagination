@@ -7,6 +7,7 @@ Currently, it supports two animation styles when it comes to the page transition
 ##NOTE:	
 This need to be used with fixed height and width, and using % may turn the functionality weird with slide option. 
 	Also it is not responsive. These things will be fixed in the next subsequent releases!
+	Please refer this link for a demo https://youtu.be/TU50SU-kySw
 ##Pagination
 
 to use the pagination component, keep your html and css ready
