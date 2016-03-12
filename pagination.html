@@ -1,0 +1,208 @@
+<!--Copyright (C) 2016  Srikanth Modegunta
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License along
+with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Pagination</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="lib/css/option_btn.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="lib/option_btn.js"></script>
+    <script type="text/javascript" src="lib/pagination.js"></script>
+    <style type="text/css">
+        .x{
+            width: auto;
+            margin: 10px;
+            border: red 1px solid;
+        }
+        .y{
+            width: auto;
+            margin: 10px;
+            border: blue 2px solid;
+        }
+        .pagination {
+            height: 280px;
+            width: 350px;
+            border: 1px solid green;
+        }
+        
+        .cntrl{
+            height: 50px;
+            width: 350px;
+            text-align: center;
+        }
+
+    </style>
+    <script type="text/javascript">
+	$(function(){
+        
+		var page = $(".pagination").pagination({ // add callback for transition also or provide support for the same
+			columnCount: 3,
+			rowCount: 1, 
+            /*width: '400px',
+            height: '400px',*/
+			forward_click_binding: "#next", //add go method also
+			backward_click_binding: "#prev",
+            first_click_binding: "#first",
+            last_click_binding: "#last",
+			itemOnClick: function(index, itemnodes){
+				var item = $(itemnodes).get(index);
+				$(itemnodes).removeClass("y");
+				$(item).addClass("y");
+			},
+			onNavigate: function(obj){ //recieves page object ($.pagination.page)
+				$('span.current').text(obj.currentpage);
+			},
+			on_load: function(obj){
+				$('span.current').text(obj.currentpage);
+				$('span.total').text(obj.pagecount);
+			},
+            animation_style: 'default',
+            page_transition_delay: 1000
+            
+			//circular: true
+            /*autoloop_delay: 2000*/ //uncomment and see the auto loop
+		});
+    });
+
+    </script>
+</head>
+<body>
+
+<div class="caption">
+    <p><span class="current"></span> of <span class="total"></span> pages
+</div>
+    
+<div class="cntrl" style="clear: both;">
+    <button id="first">|&lt;</button>
+    <button id="prev">previous</button>
+    <button id="next">next</button>
+    <button id="last">&gt;|</button>
+</div>
+
+<div class="pagination">
+    <!--<div class="x">
+        <img alt="Item 1" src="images/5.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Channel 5 (1)</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>-->
+    <div class="x">
+        <img alt="Item 2" src="images/8.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Channel 8</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+    <div class="x">
+        <img alt="Item 3" src="images/U.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Channel U</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+    <div class="x">
+        <img alt="Item 4" src="images/CNA.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">CNA</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+    <div class="x">
+        <img alt="Item 5" src="images/surla.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Surla</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="x">
+        <img alt="Item 6" src="images/startMovies.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">STAR Movies</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="x">
+        <img alt="Item 7" src="images/varsantham.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Vasantham</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="x">
+        <img alt="Item 8" src="images/5.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Channel 5</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="x">
+        <img alt="Item 9" src="images/8.png" height="60px" width="75px">
+
+        <div>
+            <p>
+                <span style="font-weight: bold;clear: both;" class="channelName">Channel 8</span>
+                <br>
+                <span style="clear: both;"></span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<hr/>
+</body>
+</html>
